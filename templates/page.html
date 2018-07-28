@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <style type="text/css">
+            body {
+                background: rgb(204,204,204);
+            }
+            page {
+                background: white;
+                display: block;
+                margin: 0 auto 0.5cm;
+                box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+            }
+            page[size="A4"] {
+                width: 21cm;
+                height: 29.7cm;
+            }
+            page[size="A4"][layout="portrait"] {
+                width: 29.7cm;
+                height: 21cm;
+            }
+
+            page[size="A5"][layout="portrait"] {
+                width: 21cm;
+                height: 14.8cm;
+            }
+            @media print {
+                body,
+                page {
+                    margin: 0;
+                    box-shadow: 0;
+                }
+            }
+            .word {
+                width: 100%;
+                height: 100%;
+            }
+            .word p {
+                line-height: 550px;
+                font-size: 100px;
+                text-align: center;
+            }
+            page .pinyi {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                width: 100%;
+                height: 30%;
+                /*   border: solid 2px black; */
+            }
+            page .pic {
+                padding: 10px 0 0;
+                border-radius: 5px;
+                text-align: center;
+                vertical-align: middle;
+                width: 100%;
+                height: 60%;
+                /*   border: solid 2px white; */
+            }
+            page .pinyi p {
+                color: white;
+                display: inline-block;
+                border-radius: 5px;
+                background-color: #693422;
+                font-size: 50px;
+                letter-spacing: 5px;
+            }
+            .pic img {
+                width: 80%;
+                height: 80%;
+            }
+        </style>
+        <title>Document</title>
+    </head>
+    <body>
+
+        <page size="A5" layout="portrait">
+            <div class="word">
+                <p>{{ name }}</p>
+            </div>
+        </page>
+        <page size="A5" layout="portrait">
+            <div class="pic">
+                <img src="{{ file }}" alt="">
+            </div>
+            <div class="pinyi">
+                <p>{{ pinyi }}</p>
+            </div>
+        </page>
+    </body>
+</html>
