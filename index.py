@@ -22,6 +22,8 @@ def hello_world():
         with open(tmp, 'w') as fout:
             fout.write(newPage)
         pdfkit.from_file(tmp, 'pdf/'+ name +'.pdf')
+        os.remove("/Users/ekman/Documents/pinyi/pinyi/static/" + file)
+
     os.remove(tmp)
     return '完成字卡'
 
