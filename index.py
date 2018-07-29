@@ -27,7 +27,7 @@ def hello_world():
             fout.write(newPage)
         pdfkit.from_file(tmp, 'pdf/'+ name +'.pdf')
     os.remove(tmp)
-    return 'Hello, World!'
+    return '完成字卡'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
