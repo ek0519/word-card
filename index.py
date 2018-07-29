@@ -6,7 +6,7 @@ import os
 from pypinyin import pinyin, lazy_pinyin, Style
 
 app = Flask(__name__)
-
+tmp = 'tmp.html'
 @app.route('/')
 def hello_world():
     # with open('word.csv', newline='') as File:  
@@ -23,9 +23,10 @@ def hello_world():
         name = file.split('.')[0]
         pinyi = nameDic[name]
         newPage = render_template('page.html', name=name, file="/Users/ekman/Documents/pinyi/pinyi/static/" + file, pinyi=pinyi)
-        with open(name + '.html', 'w') as fout:
+        with open(tmp, 'w') as fout:
             fout.write(newPage)
-        pdfkit.from_file(name + '.html', name +'.pdf')
+        pdfkit.from_file(tmp, 'pdf/'+ name +'.pdf')
+    os.remove(tmp)
     return 'Hello, World!'
 
 if __name__ == '__main__':
