@@ -9,10 +9,6 @@ app = Flask(__name__)
 tmp = 'tmp.html'
 @app.route('/')
 def hello_world():
-    # with open('word.csv', newline='') as File:  
-    # reader = csv.reader(File)
-    # for row in reader:
-    #     print(row)
     nameDic = {}
     with open('csv/word.csv', newline='') as File:  
         reader = csv.reader(File)
